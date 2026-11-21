@@ -15,7 +15,7 @@
 | 1   | Đào Huy Hoàng   | 2A202603451 |                                                                   | hoang2k3ai      | Người viết code A–B                                          |
 | 2   | Nguyễn Bá Thành | 2A202603499 | [26ai.thanhnb3@vinuni.edu.vn](mailto:26ai.thanhnb3@vinuni.edu.vn) | Nguyen-Ba-Thanh | TV2 · Kiểm số và thiết kế pilot; tiếp quản code sau giải lao |
 | 3   | Lê Nhật Linh    | 2A202603514 | [26ai.linhln@vinuni.edu.vn](mailto:26ai.linhln@vinuni.edu.vn)     |             nhatlinh056    | TV3 · Phân tích lỗi và chỉ số; người gắn nhãn 1              |
-| 4   | Lê Hồng Quân| 2A202603705                                | LeHongQuanMarble | TV4 · Giữ hồ sơ và điều phối duyệt chéo; người gắn nhãn 2   |
+| 4   | Lê Hồng Quân| 2A202603705                                |26ai.quanlh3@vinuni.edu.vn| LeHongQuanMarble | TV4 · Giữ hồ sơ và điều phối duyệt chéo; người gắn nhãn 2   |
 
 
 Bốn vai của lab:

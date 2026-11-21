@@ -6,7 +6,7 @@ Bản nháp có hỗ trợ Claude Code; thành viên cần tự đọc, kiểm t
 
 - Họ tên: Lê Hồng Quân
 - MSSV: 2A202603705
-- Email: [điền]
+- Email: 26ai.quanlh3@vinuni.edu.vn
 - Vai trong nhóm: TV4 · Giữ hồ sơ và điều phối duyệt chéo; người gắn nhãn 2 kiêm giữ hồ sơ.
 
 ## 2. Phần việc phụ trách
