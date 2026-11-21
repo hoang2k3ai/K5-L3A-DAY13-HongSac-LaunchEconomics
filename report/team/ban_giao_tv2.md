@@ -64,7 +64,7 @@ Kế hoạch là sản phẩm thiết kế cho tình huống giả định; khô
 
 - Phần TV2 đã lưu ở `34da9c0`, ghép với TV1 tại `78fb538`; các hoàn thiện cuối được lưu bằng commit bổ sung.
 - Có bản sao trước ghép ngoài repo: `../../../TV2_Backup/TV2_before_merge_20261121_153052.zip` (tính từ thư mục chứa file này).
-- Chưa push phần TV2 lên GitHub trong phiên hỗ trợ. Kiểm tra commit rồi push theo nhánh nhóm; nếu remote có thay đổi mới thì fetch/merge, không force-push.
+- Nhánh nộp: `main`; commit hoàn thiện TV2: `1634e58`. Khi cập nhật bài, kiểm tra remote và fetch/merge nếu có thay đổi mới, không force-push.
 - Thành viên tự đọc output và tính lại phép đối chiếu A2; thống nhất MDE, luật dừng và lịch kế hoạch với nhóm.
 - Tự nộp cùng link repo nhóm trên tài khoản LMS trước hạn lớp; TV4 tổng hợp kết quả duyệt chéo từ thực tế.
 
