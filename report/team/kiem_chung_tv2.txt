@@ -1,11 +1,15 @@
-TV2 handoff verification - 2026-11-21 (Asia/Saigon)
-TV1 input: 97c5410; preserved TV2 snapshot commit: 34da9c0
-PASS: all TV1 A/B functions and output retained.
-PASS: A1 and 15 cost configurations match independent Decimal calculations.
-PASS: full A-B-D1 execution, YAML sample counts, four stop rules, follow-up dates.
-Staff-minute cost estimates remain simulated.
+TV2 FINAL VERIFICATION
+Generated: 2026-11-21T15:39:20.370944+07:00
+TV1 input: 97c5410; TV2 snapshot: 34da9c0; merged baseline: 78fb538.
+PASS: TV1 A/B implementation and original output preserved.
+PASS: 3 A1 checks; 15 configurations x 9 numeric fields; inputs not mutated.
+PASS: 5 D1 answers, independent sample-size check, D3 rates.
+PASS: A1/A2/A3/A4/B1/B3/B4 row counts, Markdown links, simulated labels.
+PASS: YAML required fields, 5 D2 entries, 4 stop rules, sample sizes, power and follow-up dates.
+PASS: original CSV and starter SHA256 preserved.
+Staff-minute costs are simulated; no claim that an actual pilot or peer review has occurred.
 
-=== Full script A-B-D1 ===
+=== Full script A-B-D1-D3 ===
 Ba phép thử đáp án biết trước: ĐẠT
 
 A2 - Chi phí từ trace
@@ -59,20 +63,19 @@ B4 - Xem lại toàn bộ yêu cầu có lượt ok (simulated)
 15.3 phút làm lại/ca | 12,415 đ/việc (1.03x)
 
 D1 · Cỡ mẫu (giả định lab: baseline 0,70; ICC 0,02)
-a_n_moi_nhom                     1,251.000000
-b_de                             2.480000
-b_n_moi_nhom                     3,103.000000
-b_so_nguoi_moi_nhom              42.000000
-c_tran_hieu_dung                 1,000.000000
-d_tran_hieu_dung                 300.000000
-e_n_hieu_dung_can                859.000000
-e_m                              299.000000
-e_de                             6.960000
-e_n_thu_thap_moi_nhom            5,980.000000
-e_n_hieu_dung                    859.195402
-power_neu_chi_tang_5_diem        0.641755
+a) Theo yêu cầu: 1,251 yêu cầu/nhánh.
+b) Theo nhân viên, m=75: DE=2.48; 3,103 yêu cầu và 42 người/nhánh; cần 84 người > 40, không đủ.
+c) 20 người/nhánh: n_hiệu_dụng < 1,000 < 1,251; kéo dài không đạt mục tiêu +5 điểm.
+d) 6 depot/nhánh: n_hiệu_dụng < 300; chỉ 6 cụm/nhánh < 20, không chọn.
+e) Chấp nhận +6 điểm: 299 yêu cầu/người; DE=6.96; thu 5,980/nhánh, hiệu dụng 859.1954 >= 859.
+Đánh đổi: power khi tác động thật chỉ +5 điểm = 64.18%; không được gọi là power 80% ở +5 điểm.
 
-=== Independent verification ===
+D3 · Tỷ lệ mở lại trên dữ liệu giả lập
+Toàn mẫu: 51/1200 = 4.2500%.
+noi_dia + hang_nang: 39/982 = 3.9715%.
+Ngưỡng đề xuất: vượt 6% hoặc cao hơn đối chứng đồng thời ít nhất 2 điểm phần trăm; không chọn 3% vì thấp hơn tỷ lệ hiện tại. Hoàn trùng: dừng ngay từ 1 ca.
+
+=== Independent cost verification ===
 TV2 · Kiểm số độc lập từ CSV; mọi chi phí có giờ người là simulated.
 Ba phép thử đáp án biết trước: ĐẠT
 {
@@ -448,15 +451,24 @@ Ba phép thử đáp án biết trước: ĐẠT
 }
 
 D1 · Cỡ mẫu (giả định lab: baseline 0,70; ICC 0,02)
-a_n_moi_nhom                     1,251.000000
-b_de                             2.480000
-b_n_moi_nhom                     3,103.000000
-b_so_nguoi_moi_nhom              42.000000
-c_tran_hieu_dung                 1,000.000000
-d_tran_hieu_dung                 300.000000
-e_n_hieu_dung_can                859.000000
-e_m                              299.000000
-e_de                             6.960000
-e_n_thu_thap_moi_nhom            5,980.000000
-e_n_hieu_dung                    859.195402
-power_neu_chi_tang_5_diem        0.641755
+a) Theo yêu cầu: 1,251 yêu cầu/nhánh.
+b) Theo nhân viên, m=75: DE=2.48; 3,103 yêu cầu và 42 người/nhánh; cần 84 người > 40, không đủ.
+c) 20 người/nhánh: n_hiệu_dụng < 1,000 < 1,251; kéo dài không đạt mục tiêu +5 điểm.
+d) 6 depot/nhánh: n_hiệu_dụng < 300; chỉ 6 cụm/nhánh < 20, không chọn.
+e) Chấp nhận +6 điểm: 299 yêu cầu/người; DE=6.96; thu 5,980/nhánh, hiệu dụng 859.1954 >= 859.
+Đánh đổi: power khi tác động thật chỉ +5 điểm = 64.18%; không được gọi là power 80% ở +5 điểm.
+
+=== Pilot-only D1-D3 ===
+
+D1 · Cỡ mẫu (giả định lab: baseline 0,70; ICC 0,02)
+a) Theo yêu cầu: 1,251 yêu cầu/nhánh.
+b) Theo nhân viên, m=75: DE=2.48; 3,103 yêu cầu và 42 người/nhánh; cần 84 người > 40, không đủ.
+c) 20 người/nhánh: n_hiệu_dụng < 1,000 < 1,251; kéo dài không đạt mục tiêu +5 điểm.
+d) 6 depot/nhánh: n_hiệu_dụng < 300; chỉ 6 cụm/nhánh < 20, không chọn.
+e) Chấp nhận +6 điểm: 299 yêu cầu/người; DE=6.96; thu 5,980/nhánh, hiệu dụng 859.1954 >= 859.
+Đánh đổi: power khi tác động thật chỉ +5 điểm = 64.18%; không được gọi là power 80% ở +5 điểm.
+
+D3 · Tỷ lệ mở lại trên dữ liệu giả lập
+Toàn mẫu: 51/1200 = 4.2500%.
+noi_dia + hang_nang: 39/982 = 3.9715%.
+Ngưỡng đề xuất: vượt 6% hoặc cao hơn đối chứng đồng thời ít nhất 2 điểm phần trăm; không chọn 3% vì thấp hơn tỷ lệ hiện tại. Hoàn trùng: dừng ngay từ 1 ca.

@@ -249,18 +249,43 @@ def tinh_d1():
 
 
 def in_d1():
+    d = tinh_d1()
     print('\nD1 · Cỡ mẫu (giả định lab: baseline 0,70; ICC 0,02)')
-    for ten, gia_tri in tinh_d1().items():
-        print(f'{ten:32s} {gia_tri:,.6f}')
+    print(f"a) Theo yêu cầu: {d['a_n_moi_nhom']:,} yêu cầu/nhánh.")
+    print(f"b) Theo nhân viên, m=75: DE={d['b_de']:.2f}; "
+          f"{d['b_n_moi_nhom']:,} yêu cầu và {d['b_so_nguoi_moi_nhom']} người/nhánh; "
+          f"cần {2 * d['b_so_nguoi_moi_nhom']} người > 40, không đủ.")
+    print(f"c) 20 người/nhánh: n_hiệu_dụng < {d['c_tran_hieu_dung']:,.0f} "
+          f"< {d['a_n_moi_nhom']:,}; kéo dài không đạt mục tiêu +5 điểm.")
+    print(f"d) 6 depot/nhánh: n_hiệu_dụng < {d['d_tran_hieu_dung']:,.0f}; "
+          "chỉ 6 cụm/nhánh < 20, không chọn.")
+    print(f"e) Chấp nhận +6 điểm: {d['e_m']} yêu cầu/người; DE={d['e_de']:.2f}; "
+          f"thu {d['e_n_thu_thap_moi_nhom']:,}/nhánh, "
+          f"hiệu dụng {d['e_n_hieu_dung']:.4f} >= {d['e_n_hieu_dung_can']}.")
+    print(f"Đánh đổi: power khi tác động thật chỉ +5 điểm = "
+          f"{d['power_neu_chi_tang_5_diem']:.2%}; không được gọi là power 80% ở +5 điểm.")
+
+
+def in_an_toan_pilot(reqs):
+    """Đối chiếu ngưỡng D3 với dữ liệu chạy thử, không suy ra tác động nhân quả."""
+    print('\nD3 · Tỷ lệ mở lại trên dữ liệu giả lập')
+    pham_vi = reqs[reqs['loai'].isin(['noi_dia', 'hang_nang'])]
+    for ten, ds in [('Toàn mẫu', reqs), ('noi_dia + hang_nang', pham_vi)]:
+        so_mo_lai = int(ds['mo_lai_trong_7_ngay'].eq(1).sum())
+        print(f'{ten}: {so_mo_lai}/{len(ds)} = {so_mo_lai / len(ds):.4%}.')
+    print('Ngưỡng đề xuất: vượt 6% hoặc cao hơn đối chứng đồng thời ít nhất 2 điểm phần trăm; '
+          'không chọn 3% vì thấp hơn tỷ lệ hiện tại. Hoàn trùng: dừng ngay từ 1 ca.')
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Lab 13 · A/B của TV1, kiểm số và D1 của TV2')
-    parser.add_argument('--pilot-only', action='store_true', help='Chạy riêng đủ 5 câu D1, không chờ A/B của TV1')
+    parser.add_argument('--pilot-only', action='store_true', help='Chạy riêng 5 câu D1 và kiểm tỷ lệ mở lại cho D3')
     parser.add_argument('--kiem-so', action='store_true', help='Kiểm số A/B độc lập từ CSV, rồi tính D1')
     args = parser.parse_args()
     if args.pilot_only:
         in_d1()
+        in_an_toan_pilot(pd.read_csv(Path(__file__).resolve().parent / 'logix_requests.csv',
+                                    keep_default_na=False))
         raise SystemExit(0)
     if args.kiem_so:
         import json
@@ -364,3 +389,4 @@ if __name__ == '__main__':
 
     # CP4 · TV2 tính đủ năm câu D1 sau các bảng A/B của TV1.
     in_d1()
+    in_an_toan_pilot(reqs)

@@ -37,7 +37,8 @@
 
 pilot:
   owner: "Giám đốc vận hành LogiX-VN"
-  approval_status: "Đề xuất chờ nhóm và Giám đốc vận hành duyệt trước khi bắt đầu"
+  approval_status: "Kế hoạch đề xuất trình Gate 2a; phê duyệt triển khai là điều kiện trước ngày bắt đầu"
+  timezone: "Asia/Saigon"
   scope: "Chỉ noi_dia và hang_nang tại 12 depot LogiX-VN; loại quoc_te và doi_tac. Mẫu có 982 yêu cầu, 900 thành công; CPS 2.696 và 8.221 đ (simulated). Roster phải chốt đủ 40 nhân viên thuộc 12 depot trước khi bật."
   scope_evidence:
     sample_depots: ["D01", "D02", "D03", "D04", "D05", "D06"]
@@ -88,8 +89,10 @@ pilot:
     sample_gate: "Ít nhất 299 yêu cầu trưởng thành/người ở đủ 20 người/nhánh; nếu không đạt hoặc cỡ cụm lệch mạnh thì báo chưa đủ bằng chứng, không tự hạ MDE/đổi mẫu sau xem kết quả"
   identifiability:
     concurrent_control: "Đối chứng cùng ngày, cùng cửa sổ đo và cùng phạm vi; xử lý khác biệt cơ cấu depot khi phân tích"
+    randomization: "Ngẫu nhiên theo staff_id, phân tầng depot, seed 13; cố định 20 can thiệp và 20 đối chứng, không chọn người theo kết quả"
     spillover_risk: "Nhân viên cùng depot có thể chia sẻ câu trả lời; kiểm soát quyền tài khoản, log staff_id/arm/trace_id và ghi nhận nhiễm chéo, không tuyên bố đã loại bỏ hết"
     predeclared: "Khóa thiết kế, chỉ số, cửa sổ, luật dừng, MDE và ngày quyết định trước 2026-11-23; thiếu chữ ký chấp nhận đánh đổi +6 điểm thì chưa bắt đầu"
+    minimum_clusters: "Đúng 20 cụm nhân viên/nhánh; thiếu cụm không bù bằng tăng số yêu cầu. Thiết kế đạt cỡ mẫu xấp xỉ cho +6 điểm, không đạt power 80% ở +5 điểm."
   monitoring:
     events_required: ["refund_request_created", "agent_run_completed", "agent_suggestion_shown", "staff_review_decision", "staff_rework_completed", "handoff_to_staff", "refund_ledger_write", "ticket_closed", "ticket_reopened", "audit_sample_checked"]
     join_keys: ["request_id", "trace_id", "staff_id", "depot", "arm", "event_time"]
@@ -109,7 +112,7 @@ pilot:
   decision_date: "2027-01-05"
   decision_rule: "Chỉ đề xuất mở rộng khi đủ mẫu/cụm và follow-up, chênh quan sát >=5 điểm phần trăm, khoảng tin cậy 95% có xét cụm loại trừ 0, an toàn trong ngưỡng, chi phí cả hệ thống đo thật gồm cố định <12.000 đ/yêu cầu. Không đạt thì No-go cho mở rộng hoặc trình kế hoạch mới; không tự kéo dài để tìm ý nghĩa thống kê. MDE +6 là đánh đổi phải được ký trước."
   prerequisite_actions:
-    - "Đã nhận A1-A4, B1-B4 từ TV1 commit 97c5410; Codex đã kiểm A1/15 cấu hình và chạy script ghép A-B-D1 trên môi trường máy TV2 ngày 2026-11-21; thành viên tự xác nhận hiểu kết quả trước khi nộp"
+    - "PM khóa bảng chi phí A-B và ngưỡng theo dõi trước 2026-11-23; A1/15 cấu hình đã đối chiếu, số chi phí có giờ nhân viên là simulated và sẽ thay bằng phút đo thật từ ngày đầu"
     - "COO duyệt ngày 2026-11-22: roster đủ 40 người/12 depot, ngẫu nhiên 20+20, đánh đổi MDE +6 và kinh phí pha xem lại 100%"
     - "Kỹ sư trưởng kiểm thử khóa chống trùng, xác nhận sổ cái và nút tắt trước 2026-11-23; TV3 cung cấp đặc tả event và kế hoạch kiểm toán lỗi ngầm"
   simulated_inputs:

@@ -53,7 +53,7 @@ Sao chép mục dưới đây cho từng thành viên.
 
 ## NguyenBaThanh-2A202603499 · TV2
 
-Thông tin tên/MSSV lấy theo file cá nhân đã có trong repo; thành viên cần xác nhận trước khi nộp.
+Vai trò: người kiểm số và thiết kế pilot; thông tin liên hệ ghi ở dòng TV2 trong bảng thành viên.
 
 ### Phần việc phụ trách
 
@@ -62,8 +62,9 @@ Thông tin tên/MSSV lấy theo file cá nhân đã có trong repo; thành viên
 
 ### Đóng góp cụ thể
 
-- Đã chuẩn bị cùng Codex: bảng chi phí đầy đủ từ CSV bằng phép tính độc lập, phần D1 và chế độ kiểm số trong `src/lab13.py`, kế hoạch pilot chia 20+20 nhân viên và 4 luật dừng.
-- Đã nhận A/B của TV1 từ `97c5410`; Codex đã chạy lại toàn bộ script trong môi trường máy TV2, xác nhận 3 phép thử A1 và 15 cấu hình khớp tính độc lập. Thành viên cần tự kiểm phép tính tay và xác nhận hiểu kết quả trước khi nộp.
+- Hoàn thiện bảng A1–A4/B1–B4 và phép tính đối chiếu từ CSV; bổ sung D1 a–e, kiểm tỷ lệ mở lại D3 và chế độ kiểm số trong `src/lab13.py` với hỗ trợ Codex.
+- Thiết kế pilot chia ngẫu nhiên 20+20 nhân viên, 299 yêu cầu/người, 5 câu D2, 4 luật dừng và rollback; ghi rõ power khoảng 64,18% nếu tác động chỉ +5 điểm phần trăm.
+- Đã nhận A/B của TV1 từ `97c5410`, ghép tại `78fb538`; chạy lại script bằng Codex trên môi trường máy TV2, xác nhận 3 phép thử A1 và 15 cấu hình × 9 trường số khớp tính độc lập. Báo cáo cá nhân khai công cụ AI và cách kiểm chứng.
 
 ### Bằng chứng
 

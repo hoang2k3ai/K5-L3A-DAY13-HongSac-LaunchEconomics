@@ -29,7 +29,7 @@ Số tiền làm tròn đến đồng, hóa đơn/yêu cầu giữ 1 chữ số 
 - CPS gấp **16,28 lần** hóa đơn/yêu cầu (`simulated`); tử số tính cả lần chạy lỗi, mẫu số chỉ có **978** việc thành công.
 - Làm lại lớn nhất: **51,77%**; xem lại **40,70%**; tổng giờ nhân viên **92,46%** chi phí (`simulated`).
 
-### Phép tính tay TV2 cần tự kiểm tra
+### Phép tính tay đối chiếu của TV2
 
 `(245.585,132 + 5.600 × 15 + 890 × 2.000 + 1.132 × 2.000) / 978 = 4.471,9684 đ/việc thành công` (`simulated`).
 Không cộng thêm **93.804 đ** chạy lại lần nữa: token và tool đã bao gồm toàn bộ **1.624** lượt.
@@ -117,7 +117,7 @@ Giữ tối đa **3** lượt như đề B4; B3 là kịch bản riêng. Trong *
 - CSV có trung bình **1.132/74 = 15,2973 phút/ca** (`simulated`); dùng số chính xác cho **12.414,50 đ**. Mức **12.414 đ** trong hướng dẫn là xấp xỉ; làm tròn đến đồng ở đây cho **12.415 đ**.
 - Pilot phải đo phút thật, giảm xem lại an toàn: hòa vốn CPS ở **5,122 phút/lượt** với 9 phút làm lại, hoặc **4,803 phút/lượt** với 15,3 phút (`simulated`); xem lại 100% không tiết kiệm dài hạn.
 
-## Bằng chứng và bước chốt với TV1
+## Bằng chứng đối chiếu với TV1
 
 - Nguồn: hai CSV gốc; `docs/du_lieu_va_cong_thuc.md`, `docs/Lab13_Huong_dan_chi_tiet_buoi_chieu.md` và đề Word.
 - `python lab13.py --kiem-so` kiểm tổng phút, mẫu số, quan hệ gấp đôi/giảm nửa và B2; đã đối chiếu **15** cấu hình với code TV1, tất cả khớp ở sai số tính số thực.

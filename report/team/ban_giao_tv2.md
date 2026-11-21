@@ -1,73 +1,71 @@
-# Bàn giao phần TV2 — Kiểm số và thiết kế pilot
+# Bàn giao TV2 — Kiểm số và thiết kế pilot
 
-Đã chuẩn bị `bang_chi_phi.md`, `pilot_plan.yaml`, báo cáo cá nhân và phần kiểm số/D1 trong `src/lab13.py`.
-Đã nhận A/B của TV1 từ commit `97c5410` ngày 21/11/2026; đã ghép với phần TV2. Codex chạy toàn bộ script trong môi trường máy TV2, xác nhận A1 và 15 cấu hình đối chiếu ĐẠT; số trong bảng không cần thay đổi.
+**Phần kỹ thuật TV2 đã hoàn thiện.** Đã nhận A–B của TV1 (`97c5410`), ghép với code TV2 (`78fb538`) và kiểm lại các số dùng trong hồ sơ.
+Báo cáo cá nhân: [Nguyễn Bá Thành — 2A202603499](2A202603499_NguyenBaThanh.md).
 
-## 1. TV2 phụ thuộc TV1 ở đâu
+## 1. Đối chiếu phân công
 
-| Việc | Có phải chờ TV1 | Cách chốt |
+| Việc được giao | Bằng chứng | Trạng thái kỹ thuật |
 | --- | --- | --- |
-| Tính tay A1/A2, kiểm dữ liệu | Không | Tự tính công thức; đối chiếu tổng phút và số thành công |
-| Chuẩn bị bảng A2–A4, B1–B4 | Không để tính độc lập; có để chốt số nhóm | Chạy `--kiem-so`, rồi so với `mo_hinh` TV1 |
-| Tính 5 câu D1, so sánh cách chia | Không | Dùng baseline/ICC/số người từ đề; `--pilot-only` |
-| Chốt phạm vi, retry và luật chi phí | Cần A3/B3/B4 đáng tin | Đã có số độc lập; kiểm lại khi nhận A/B; không tự đổi quy ước |
-| Chạy toàn bộ script, chứng minh đổi người viết code | Có | TV1 hoàn thiện A/B, TV2 tự chạy và kiểm từ đầu đến cuối |
-| Báo cáo cá nhân, nộp LMS | Không | Mỗi người tự ghi đóng góp thật và tự nộp link |
+| Tính ít nhất 1 kết quả đối chiếu | Phép tính A2 trong [bang_chi_phi.md](bang_chi_phi.md), kiểm độc lập `Decimal` | Hoàn thành; thành viên tự tính lại để giải thích |
+| Điền A2–A4, B1–B4, xếp hạng 3 yếu tố | Các bảng đủ số và nhãn `simulated`; 15 cấu hình khớp code TV1 | Hoàn thành |
+| Tiếp quản code, chạy lại chi phí | Script A–B–D1–D3 và [output kiểm chứng](kiem_chung_tv2.txt) | Hoàn thành trong phiên hỗ trợ Codex |
+| Làm 5 câu D1 | `tinh_d1()`, in theo câu a–e; chú thích đầu YAML | Hoàn thành |
+| Trả lời 5 câu D2, chọn đối chứng | `pilot_plan.yaml`: chia nhân viên, ngẫu nhiên phân tầng, 20+20 người | Hoàn thành |
+| Viết ít nhất 3 luật dừng | 4 luật: giao dịch, mở lại, chi phí, sử dụng; đủ NẾU–TRONG–THÌ–KHÔNG THÌ | Hoàn thành |
+| Báo cáo cá nhân, đóng góp | Báo cáo đúng tên MSSV, khai AI và bằng chứng; mục TV2 trong TEAM.md | Hoàn thành |
 
-TV1 cần giữ chữ ký `mo_hinh(runs, reqs, gia_vao, gia_ra, gia_tool, luong_phut, he_so_xem_lai, he_so_lam_lai, max_lan_chay)`.
-Hàm phải lọc lượt theo `request_id`, giữ mọi lượt lỗi, không sửa DataFrame gốc; khi cắt lượt thì ca vượt giới hạn chuyển nhân viên, cả hai cột phút bằng 0.
-Bản ghép đã giữ khối in A/B của TV1, các hàm kiểm số/D1 của TV2 và lời gọi `in_d1()` ở cuối; script in đủ A2–A4, B1–B4, D1.
+**Phụ thuộc TV1 đã được giải quyết:** A1 đạt và A–B đã nhận, kiểm số, ghép. Không còn phải chờ TV1 để hoàn thành D1/D2 hay tài liệu TV2.
 
 ## 2. Chạy và kiểm tra
 
-Môi trường ảo đã được tạo ở `.venv/` tại gốc repo, nằm trong gitignore. Lệnh chạy trong `src/`:
+Từ gốc repo, dùng môi trường ảo đã có ở `.venv/`:
 
 ```powershell
 $env:PYTHONIOENCODING = "utf-8"
 Set-Location src
+../.venv/Scripts/python.exe lab13.py
 ../.venv/Scripts/python.exe lab13.py --kiem-so
 ../.venv/Scripts/python.exe lab13.py --pilot-only
-../.venv/Scripts/python.exe -c "import yaml; yaml.safe_load(open('../report/team/pilot_plan.yaml', encoding='utf-8-sig')); print('YAML OK')"
+../.venv/Scripts/python.exe -c "import yaml; yaml.safe_load(open('../report/team/pilot_plan.yaml', encoding='utf-8')); print('YAML OK')"
 ```
 
-`--kiem-so` đã xác nhận A1 và **15 cấu hình**: 1 gốc, 4 loại, 9 kịch bản đơn và 1 cặp.
-Lệnh `../.venv/Scripts/python.exe lab13.py` đã chạy hết và in đủ A–B cùng D1; output lưu ở [kiem_chung_tv2.txt](kiem_chung_tv2.txt).
-Đây là kiểm tra chạy bằng Codex; thành viên vẫn tự đọc kết quả, tính tay và giải thích trước khi nộp.
+`--kiem-so` kiểm **15 cấu hình × 9 trường số**: 1 gốc, 4 loại yêu cầu, 9 kịch bản đơn, 1 cặp.
+`--pilot-only` in đủ D1 a–e và tỷ lệ mở lại để kiểm luật D3. Nếu dùng môi trường `src/.venv`, thay đường dẫn Python bằng `./.venv/Scripts/python.exe`.
 
 ## 3. Số bàn giao cho TV3 và TV4
 
-| Nội dung | Số từ script | Lưu ý |
+| Nội dung | Kết quả | Phạm vi và nhãn |
 | --- | --- | --- |
-| CPS toàn mẫu | 4.472 đ | simulated, chưa cố định |
-| Chi phí cả hệ thống/yêu cầu | 5.864,65 đ | simulated, cộng 12.000 đ mỗi ca không thành công theo đề B3, chưa cố định |
-| Phạm vi nội địa + hàng nặng | 982 yêu cầu, 900 thành công; CPS 3.413,90 đ | CPS simulated |
-| Có cố định 40 triệu đ/tháng | 4.599 đ/việc ở 45.000 yêu cầu/tháng; 5.784 đ khi còn 22.500 | simulated; CPS chưa gồm luồng nhân viên |
-| 3 yếu tố nhạy nhất | Làm lại +51,77%; xem lại +40,70%; lương +23,12% | simulated, theo mức thay đổi đầu vào của đề |
-| B3 | Giới hạn 2 lượt: hệ thống 6.901.220 đ/1.200 yêu cầu | simulated; kết quả toàn mẫu, cần đo lại trên phạm vi pilot |
-| B4 | 11.743 đ với 9 phút làm lại; 12.415 đ với 15,3 phút | simulated; xem lại 100% gần/hơn baseline, chưa cố định |
-| D1 | 20+20 người, 299 yêu cầu/người, 5.980 thực/nhánh, khoảng 859,20 hiệu dụng | DE 6,96; MDE +6 điểm; power chỉ 0,6418 nếu tác động +5 điểm |
-| Mở lại | 51/1.200=4,25%; phạm vi 39/982=3,9715% | từ dữ liệu giả lập; không phải chênh với đối chứng |
-| Pilot | 4 luật dừng; ngày quyết định đề xuất 05/01/2027 | ngày và ngưỡng là đề xuất chờ duyệt; cần đủ 40 người/12 depot |
+| CPS toàn mẫu | 4.471,97 đ; 978 thành công | simulated; chưa cố định |
+| Chi phí hệ thống/yêu cầu | 5.864,65 đ = 0,489× baseline | simulated; quy ước B3, chưa cố định |
+| Nội địa + hàng nặng | 982 yêu cầu, 900 thành công; CPS 3.413,90 đ | CPS simulated |
+| Có cố định 40 triệu đ/tháng | 4.599 đ/việc ở 45.000 yêu cầu; 5.784 đ ở 22.500 | simulated; A4 chưa gồm luồng nhân viên |
+| Nhạy nhất theo kịch bản đề | Làm lại +51,77%; xem lại +40,70%; lương +23,12% | simulated |
+| Giới hạn rẻ nhất B3 | 2 lượt: 6.901.220 đ/1.200 yêu cầu | simulated; toàn mẫu, cần đo thật khi pilot |
+| Xem lại 100% B4 | 11.743 đ với 9 phút làm lại; 12.415 đ với 15,3 phút | simulated; chưa cố định và chuyển nhân viên |
+| D1 | 20+20 người; 299 yêu cầu/người; 5.980 thực/nhánh; 859,20 hiệu dụng | DE 6,96; thiết kế MDE +6 điểm |
+| Đánh đổi bất lợi | Power chỉ 64,18% nếu tác động thật +5 điểm | Xấp xỉ theo ICC 0,02; không tuyên bố power 80% ở +5 |
+| Mở lại | 51/1.200 = 4,25%; phạm vi 39/982 = 3,9715% | Dữ liệu giả lập; không phải chênh đối chứng |
+| Lịch pilot đề xuất | Bắt đầu 23/11/2026; đo ổn định từ 07/12; nhận mẫu đến 27/12; theo dõi hết 04/01; quyết định 05/01/2027 | Lịch kế hoạch, không phải hoạt động đã diễn ra |
 
-TV3 dùng số B trong rủi ro, đặc tả đủ event để tính luật dừng và phút thật; TV4 ghi rõ đánh đổi MDE và chi phí xem lại 100% trong hồ sơ.
-Chưa có chữ ký chấp thuận hoặc roster thực; không ghi các điều kiện đã hoàn tất. Không tự chấm hội đồng hoặc tạo hai bộ nhãn độc lập.
+TV3 dùng số B cho rủi ro và hoàn thiện event/phút đo thật. TV4 đưa đánh đổi MDE, chi phí xem lại 100% và ngày quyết định vào hồ sơ.
+Kế hoạch là sản phẩm thiết kế cho tình huống giả định; không ghi đã có chữ ký chấp nhận, kết quả pilot hay điểm hội đồng.
 
-## 4. Bàn giao Git đã thực hiện
+## 4. Ba lập luận cần giải thích khi trình bày
 
-- Sao lưu ngoài repo: `../TV2_Backup/TV2_before_merge_20261121_153052.zip`.
-- Commit phần TV2 trước ghép: `34da9c0`; lấy TV1 bằng `git fetch origin main`, commit `97c5410`.
-- Ghép A/B TV1 và kiểm số/D1 TV2; giải quyết xung đột ở `TEAM.md`, `bang_chi_phi.md` bằng đối chiếu nội dung và kết quả, giữ thông tin email/GitHub đã điền.
-- Chạy lại cả script, 15 cấu hình, D1 và đọc YAML; không thay hai CSV hoặc bản starter.
-- Chưa push phần TV2 lên GitHub. Sau khi kiểm tra commit cuối, có thể dùng `git push origin main`; nếu nhóm có thay đổi mới thì fetch/merge lại, không force-push.
+| Nội dung | Lập luận bằng số |
+| --- | --- |
+| Vì sao chia cho việc thành công | 1.624 lượt đều tốn tiền, nhưng chỉ 978 việc đạt yêu cầu; dùng 1.200 làm mẫu số sẽ thành chi phí/yêu cầu, không phải CPS |
+| Vì sao chọn 2 lượt | 1 lượt có CPS 4.111 đ nhưng hệ thống tốn 7.449.781 đ; 2 lượt có CPS 4.237 đ và hệ thống chỉ 6.901.220 đ (simulated) |
+| Vì sao không kéo dài để đủ +5 điểm | Với 20 cụm/nhánh, n hiệu dụng <20/0,02=1.000<1.251; cần đổi thiết kế hoặc chấp nhận MDE +6, không chỉ tăng ngày |
 
-## 5. Checklist cá nhân cần làm thật
+## 5. Lưu bài và việc cá nhân cuối cùng
 
-- [ ] Xác nhận tên Nguyễn Bá Thành, MSSV 2A202603499 và email/GitHub đã đồng bộ từ TEAM.md.
-- [ ] Tự tính lại ít nhất 1 phép tính A2; giải thích vì sao không cộng phí chạy lại hai lần.
-- [ ] Tự chạy `--kiem-so` và `--pilot-only`; đọc kết quả thay vì chỉ chép số.
-- [x] Codex đã nhận code TV1, kiểm A1/15 cấu hình và chạy hết script trong môi trường máy TV2; thành viên vẫn cần tự đọc, hiểu kết quả.
-- [ ] Thống nhất MDE +6, phạm vi pilot, ngưỡng và ngày đề xuất với nhóm; TV4 cập nhật hồ sơ.
-- [ ] Commit phần đóng góp thật, ghi mã commit vào báo cáo; phối hợp TV4 cập nhật TEAM.
-- [ ] Kiểm tra repo GitHub mở được rồi tự nộp cùng link nhóm trên LMS trước hạn của lớp.
+- Phần TV2 đã lưu ở `34da9c0`, ghép với TV1 tại `78fb538`; các hoàn thiện cuối được lưu bằng commit bổ sung.
+- Có bản sao trước ghép ngoài repo: `../../../TV2_Backup/TV2_before_merge_20261121_153052.zip` (tính từ thư mục chứa file này).
+- Chưa push phần TV2 lên GitHub trong phiên hỗ trợ. Kiểm tra commit rồi push theo nhánh nhóm; nếu remote có thay đổi mới thì fetch/merge, không force-push.
+- Thành viên tự đọc output và tính lại phép đối chiếu A2; thống nhất MDE, luật dừng và lịch kế hoạch với nhóm.
+- Tự nộp cùng link repo nhóm trên tài khoản LMS trước hạn lớp; TV4 tổng hợp kết quả duyệt chéo từ thực tế.
 
-Nguồn: README, RULES, CHECKPOINTS, RUBRIC, SUBMISSION, hướng dẫn chi tiết và đề Word trong repo. Các thao tác tự kiểm tra/nộp bài chỉ đánh dấu sau khi thực hiện.
+Nguồn: quy định repo, đề lab, dữ liệu và công thức, hướng dẫn chi tiết nội bộ; xem nguồn tại [bảng chi phí](bang_chi_phi.md).

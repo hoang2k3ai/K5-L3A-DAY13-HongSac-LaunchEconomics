@@ -6,64 +6,50 @@
 - MSSV: 2A202603499.
 - Email: 26ai.thanhnb3@vinuni.edu.vn.
 - GitHub: Nguyen-Ba-Thanh.
-- Vai: **TV2 · Kiểm số và thiết kế pilot**; tiếp quản code sau giải lao.
-- Nhóm: Hồng Sắc; lớp L3A, theo tên repo.
-- Tên/MSSV được điền theo file cá nhân đã có trong repo; cần thành viên xác nhận.
+- Nhóm: Hồng Sắc · Lớp: L3A.
+- Vai trò: **TV2 · Kiểm số và thiết kế pilot**, tiếp quản code sau giải lao.
 
 ## 2. Phần việc phụ trách
 
-- Tính tay ít nhất 1 kết quả để đối chiếu; điền A2–A4, B1–B4 và xếp hạng 3 yếu tố nhạy nhất trong [bảng chi phí](bang_chi_phi.md).
-- Sau bàn giao TV1: tự chạy lại code chi phí; làm 5 câu D1 trong [lab13.py](../../src/lab13.py), trả lời 5 câu D2 và hoàn thiện [pilot plan](pilot_plan.yaml).
-- Bàn giao số A–B cho TV3 viết rủi ro, số A–D cho TV4 tổng hợp hồ sơ; tự nộp link repo nhóm bằng tài khoản LMS cá nhân.
+- Kiểm số A1–A4; điền bảng A2–A4, B1–B4 và xếp hạng 3 yếu tố nhạy nhất.
+- Tiếp nhận code A–B của TV1; bổ sung 5 câu D1 vào `src/lab13.py`, trả lời 5 câu D2, chọn cách chia, đối chứng và luật dừng trong `pilot_plan.yaml`.
+- Cung cấp số kinh tế và đánh đổi thiết kế cho TV3/TV4 tổng hợp, đồng thời ghi đóng góp cá nhân trong `TEAM.md`.
 
 ## 3. Đóng góp cụ thể
 
-Các nội dung dưới đây đã được chuẩn bị và chạy kiểm tra bằng Codex trên bản repo hiện tại; chưa thay cho việc thành viên tự đọc, tính lại và chạy trên máy của mình.
-
-| Phần | Nội dung đã chuẩn bị | Kết quả chính |
+| Phần | Nội dung | Kết quả |
 | --- | --- | --- |
-| Kiểm số A | Phép tính tay và phép cộng độc lập bằng CSV + Decimal; điền A1–A4 | CPS **4.472 đ**, tỷ lệ làm lại trong chi phí **51,77%** (`simulated`) |
-| Độ nhạy B | Đủ 9 kịch bản B1, cặp B2, ba giới hạn B3, xem lại 100% B4 | Làm lại > xem lại > lương theo các kịch bản; **2 lượt** rẻ nhất hệ thống: **6.901.220 đ** (`simulated`) |
-| Cỡ mẫu D1 | Công thức z và DE, phân biệt mẫu thực với hiệu dụng | **1.251** theo yêu cầu; **3.103** với m=75; trần **1.000/300**; m tối thiểu **299** khi chấp nhận +6 điểm |
-| Thiết kế D2/D3 | Đối chứng cùng thời gian, chia ngẫu nhiên theo nhân viên, kiểm soát tràn tác động, 4 luật dừng và rollback | **20+20** người, **5.980** yêu cầu thực/nhánh, **859,20** hiệu dụng; quyết định đề xuất **05/01/2027** |
+| Kiểm số A | Tính độc lập từ hai CSV bằng `csv` và `Decimal`; trình bày phép tính đối chiếu | **978** thành công; CPS **4.471,97 đ**; làm lại chiếm **51,77%** chi phí (`simulated`) |
+| Bảng A–B | Hoàn thiện A1–A4, 9 kịch bản B1, B2 và so sánh B3/B4 | **2 lượt** rẻ nhất cả hệ thống: **6.901.220 đ**; xem lại 100%: **11.743 đ** với 9 phút làm lại (`simulated`) |
+| Tiếp quản code | Ghép A–B từ TV1, giữ kiểm số độc lập và bổ sung D1/D3 | **3** phép thử A1 đạt; **15** cấu hình đối chiếu khớp; script chạy hết A–B–D1–D3 |
+| Thiết kế pilot | D1, D2, nhóm đối chứng, 4 luật dừng, rollback và ngày quyết định | **20+20** người; **299** yêu cầu/người; **5.980** yêu cầu thực/nhánh, khoảng **859,20** hiệu dụng |
 
-Phép tính để tự giải thích: `(245.585,132 + 84.000 + 890×2.000 + 1.132×2.000) / 978 = 4.471,9684 đ` (`simulated`).
-Giới hạn 1 lượt có CPS thấp nhất nhưng đẩy thêm **85** yêu cầu sang nhân viên so với 2 lượt; vì vậy tối ưu CPS không đồng nghĩa tối ưu chi phí công ty.
-Chia 20 cụm/nhánh có trần hiệu dụng **1.000 < 1.251**; tăng thời gian không khắc phục được thiếu cụm cho mục tiêu +5 điểm.
+Phép tính đối chiếu: `(245.585,132 + 84.000 + 890×2.000 + 1.132×2.000) / 978 = 4.471,9684 đ/việc thành công` (`simulated`).
+Tử số gồm mọi lượt, kể cả lỗi; phí chạy lại **93.804,49 đ** đã nằm trong token/tool nên không cộng lần nữa.
+
+Xếp hạng theo các kịch bản đề yêu cầu: **làm lại +51,77% > xem lại +40,70% > lương +23,12%** (`simulated`).
+Giới hạn **1 lượt** có CPS thấp nhất nhưng chuyển thêm **85** yêu cầu cho nhân viên so với **2 lượt**, nên không tối ưu chi phí cả công ty.
 
 ## 4. Bằng chứng
 
-- [bang_chi_phi.md](bang_chi_phi.md): A1–A4, B1–B4, nhãn `simulated`, công thức tính tay và nguồn.
-- [pilot_plan.yaml](pilot_plan.yaml): D1/D2 ở chú thích, thiết kế và các ngưỡng; số lượng mẫu thực ghi rõ **5.980/nhánh**, không nhầm với **859** hiệu dụng.
-- [src/lab13.py](../../src/lab13.py): `kiem_so_doc_lap`, `co_mau_hai_ti_le`, `tinh_d1`, cờ `--kiem-so` và `--pilot-only`; đã ghép phần A/B của TV1 từ commit `97c5410`, giữ các hàm kiểm số và D1 của TV2.
-- [ban_giao_tv2.md](ban_giao_tv2.md): các lệnh chạy, phụ thuộc TV1, đầu vào cho TV3/TV4 và checklist cá nhân.
-- [kiem_chung_tv2.txt](kiem_chung_tv2.txt): output kiểm số và D1 tạo từ script trên bản hiện tại; xác nhận A1 và 15 cấu hình A/B của TV1 ĐẠT, cùng output chạy toàn bộ A–B và D1.
-- Commit phần TV2 trước bàn giao: `34da9c0`. Commit A/B của TV1: `97c5410`. Bản ghép được Codex chạy lại trong môi trường máy TV2; chưa ghi nhận kết quả duyệt chéo hoặc việc thành viên đã tự tính tay.
+- [Bảng chi phí](bang_chi_phi.md): đủ A1–A4/B1–B4, phép tính và nhãn `simulated`.
+- [Code nhóm](../../src/lab13.py): `kiem_so_doc_lap()`, `tinh_d1()`, `in_d1()`, `in_an_toan_pilot()`; các chế độ `--kiem-so` và `--pilot-only`.
+- [Pilot plan](pilot_plan.yaml): đủ 5 câu D1, 5 câu D2, đối chứng và 4 luật dừng; ngày quyết định đề xuất **05/01/2027**.
+- [Output kiểm chứng](kiem_chung_tv2.txt): kết quả chạy script và kiểm số trên môi trường máy TV2 trong phiên làm việc với Codex.
+- [Bàn giao TV2](ban_giao_tv2.md) và [TEAM.md](../../TEAM.md): kết quả để TV3/TV4 sử dụng và đóng góp cá nhân.
+- Commit TV2 trước bàn giao: `34da9c0`; code A–B của TV1: `97c5410`; commit ghép: `78fb538`. Các hoàn thiện sau đó được lưu bằng commit mới.
 
 ## 5. Công cụ AI đã dùng
 
-**Codex/ChatGPT** hỗ trợ đọc tài liệu repo, giải thích công thức, viết phần kiểm số/D1, soạn bảng và kế hoạch, cài thư viện trong môi trường ảo, chạy kiểm tra.
-Không gọi mô hình qua API; không sửa CSV, không tạo nhãn độc lập hoặc điểm hội đồng thay TV3/TV4.
+Sử dụng **Codex/ChatGPT** để giải thích công thức, gợi ý code kiểm số/D1, soạn và rà báo cáo, giải quyết xung đột khi ghép code, chạy kiểm tra. Không dùng API key; không sửa hai CSV.
 
-**Kiểm tra tự động đã thực hiện trong phiên hỗ trợ:** cộng độc lập bằng module `csv` và lớp `decimal.Decimal`, kiểm quan hệ gấp đôi/giảm nửa và tính cộng B2, tính lại 5 câu D1, tính power bằng statsmodels và đọc YAML bằng `yaml.safe_load`.
-Đã đối chiếu thêm 15 cấu hình với code TV1 và chạy toàn bộ script sau ghép; riêng B4, **12.414,79 đ** được làm tròn thành **12.415 đ** (`simulated`), khác xấp xỉ 12.414 đ trong tài liệu dưới **1 đ**.
-
-**Tự kiểm tra của thành viên trước khi nộp:** tự tính lại phép tính A2 ở mục 3; chạy 2 lệnh dưới đây; sau khi pull TV1 chạy cả script và giải thích được tử số/mẫu số, trần cỡ mẫu và lựa chọn 2 lượt. Chỉ đánh dấu hoàn thành sau khi đã thực hiện thật.
-
-```powershell
-# Từ thư mục gốc repo
-$env:PYTHONIOENCODING = "utf-8"
-Set-Location src
-../.venv/Scripts/python.exe lab13.py --kiem-so
-../.venv/Scripts/python.exe lab13.py --pilot-only
-# Sau khi TV1 hoàn thiện và ghép A/B:
-../.venv/Scripts/python.exe lab13.py
-```
-
-Nếu môi trường ảo nằm ở `src/.venv` theo hướng dẫn nhóm, thay đường dẫn Python bằng `./.venv/Scripts/python.exe`.
+Cách kiểm chứng đã thực hiện trong phiên hỗ trợ: tính độc lập bằng `Decimal` rồi so **15 cấu hình × 9 trường số** với `mo_hinh` của TV1; chạy ba phép thử A1 và toàn bộ script; đối chiếu cỡ mẫu bằng công thức z/statsmodels; đọc YAML bằng `yaml.safe_load` và kiểm cỡ mẫu, luật dừng, lịch theo dõi.
+Phép tính đối chiếu ở mục 3 cho phép kiểm lại A2 bằng máy tính tay. Kết quả chạy tự động được lưu rõ nguồn; không ghi nhận thay việc người học tự tính, hiểu bài hay nộp LMS.
 
 ## 6. Tự đánh giá
 
-Bộ tài liệu đã có đủ phần kiểm số và thiết kế của TV2; đã nhận A–B từ TV1, ghép code, kiểm 3 phép thử A1/15 cấu hình và chạy hết script trong phiên hỗ trợ.
-Kế hoạch chấp nhận MDE **+6 điểm**: nếu hiệu quả thật chỉ **+5 điểm**, power xấp xỉ **64,18%**, không phải 80%; các con số chi phí giờ người vẫn là `simulated` cho đến khi đo phút thật.
-Trước nộp cần xác nhận thông tin cá nhân, tự kiểm số/chạy code, đối chiếu các commit đã ghi, phối hợp TV4 ghi đóng góp cuối và tự nộp link LMS; chưa tuyên bố các việc này đã hoàn thành.
+Phần kỹ thuật và tài liệu thuộc TV2 đã hoàn thiện: có code chạy được, bảng A–B khớp code TV1, thiết kế pilot và bằng chứng kiểm tra.
+Chọn chia theo nhân viên để hạn chế tràn tác động; với **20 cụm/nhánh**, cỡ mẫu hiệu dụng luôn **<1.000**, nên chấp nhận thiết kế cho mức tăng **6 điểm %**. Nếu tác động thật chỉ **5 điểm %**, power xấp xỉ **64,18%**.
+
+Chi phí có giờ nhân viên vẫn là `simulated`; phải thay bằng phút đo thật trong pilot. Xem lại 100% có thể lên **12.415 đ/việc** nếu làm lại 15,3 phút, chưa có cố định (`simulated`), nên không bỏ qua rủi ro này khi trình hồ sơ.
+Thành viên tự đọc và giải thích phép tính, thống nhất phương án với nhóm, rồi tự nộp link repo trên LMS; kết quả duyệt chéo do TV4 ghi từ buổi thực tế.
