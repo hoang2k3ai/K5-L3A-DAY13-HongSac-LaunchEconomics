@@ -9,12 +9,14 @@
 
 ## Thành viên
 
-| STT | Họ tên | MSSV | Email | GitHub | Vai trò |
-| --: | ------ | ---- | ----- | ------ | ------- |
-|   1 |        |      |       |        | Người viết code A–B |
-|   2 | Nguyễn Bá Thành | 2A202603499 | 26ai.thanhnb3@vinuni.edu.vn | Nguyen-Ba-Thanh | TV2 · Kiểm số và thiết kế pilot; tiếp quản code sau giải lao |
-|   3 |        |      |       |        |         |
-|   4 |        |      |       |        |         |
+
+| STT | Họ tên          | MSSV        | Email                                                             | GitHub          | Vai trò                                                      |
+| ---: | --------------- | ----------- | ----------------------------------------------------------------- | --------------- | ------------------------------------------------------------ |
+| 1   | Đào Huy Hoàng   | 2A202603451 |                                                                   | hoang2k3ai      | Người viết code A–B                                          |
+| 2   | Nguyễn Bá Thành | 2A202603499 | [26ai.thanhnb3@vinuni.edu.vn](mailto:26ai.thanhnb3@vinuni.edu.vn) | Nguyen-Ba-Thanh | TV2 · Kiểm số và thiết kế pilot; tiếp quản code sau giải lao |
+| 3   | Lê Nhật Linh    | 2A202603514 | [26ai.linhln@vinuni.edu.vn](mailto:26ai.linhln@vinuni.edu.vn)     |                 | TV3 · Phân tích lỗi và chỉ số; người gắn nhãn 1              |
+| 4   |                 |             |                                                                   |                 |                                                              |
+
 
 Bốn vai của lab:
 
@@ -71,3 +73,23 @@ Vai trò: người kiểm số và thiết kế pilot; thông tin liên hệ ghi
 - [Bảng A–B](report/team/bang_chi_phi.md): CPS 4.472 đ; giới hạn 2 lượt có chi phí hệ thống 6.901.220 đ (`simulated`).
 - [Pilot plan](report/team/pilot_plan.yaml): 20 cụm/nhánh, 299 yêu cầu/người, 5.980 yêu cầu thực/nhánh, khoảng 859,20 hiệu dụng.
 - [Báo cáo cá nhân](report/team/2A202603499_NguyenBaThanh.md) và [bàn giao TV2](report/team/ban_giao_tv2.md).
+
+## Lê Nhật Linh · 2A202603514 · TV3 · Phân tích lỗi và chỉ số
+
+### Phần việc phụ trách
+
+- Nhiệm vụ C: phân loại 20 ca, đối chiếu với TV4, tổng hợp đồng thuận và khắc phục 5 ca thuộc 5 loại lỗi.
+- Nhiệm vụ E1–E2: tính 3 chỉ số, đề xuất thêm 2 chỉ số, đặc tả event có `trace_id` và 2 rủi ro dựa trên phần B.
+
+### Đóng góp cụ thể
+
+- Với hỗ trợ Codex, chuẩn bị 20 nhãn kèm lý do, điền cột TV3 và bảng khắc phục 5 ca trong `bang_loi.md`; bộ nhãn hiện là bản nháp có hỗ trợ AI, chưa phải bằng chứng gắn nhãn độc lập.
+- Hoàn thiện đặc tả 5 chỉ số, 13 event có `trace_id`, nguồn dữ liệu tính từng chỉ số và 2 rủi ro kinh tế lấy số từ TV1–TV2.
+- Codex đã đếm lại CSV bằng PowerShell: 994/1.200 đạt chỉ số chính, 48/177 sửa hoặc bỏ gợi ý, 51/1.200 mở lại; thành viên cần tự đọc và giải thích các phép tính trước khi nộp.
+
+### Bằng chứng và việc còn chờ
+
+- [Bảng lỗi](report/team/bang_loi.md): 20 nhãn TV3 có hỗ trợ AI, lý do và 5 phương án khắc phục; chưa có nhãn TV4 hoặc tỉ lệ đồng thuận.
+- [Chỉ số](report/team/chi_so.md): **82,83%**, **27,12%**, **4,25%** trên dữ liệu giả lập; hai rủi ro chi phí giữ nhãn `simulated`.
+- [Báo cáo cá nhân Lê Nhật Linh](report/team/2A202603514_LeNhatLinh.md): khai phần việc, hỗ trợ AI và cách kiểm chứng; cần thành viên tự rà soát trước khi nộp.
+- Chưa có bằng chứng triển khai event hay kết quả pilot. Nhiệm vụ C còn chờ đối chiếu thật với TV4.
