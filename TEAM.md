@@ -11,7 +11,7 @@
 
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
-|   1 |        |      |       |        |         |
+|   1 |        |      |       |        | Người viết code A–B |
 |   2 | Nguyễn Bá Thành | 2A202603499 | 26ai.thanhnb3@vinuni.edu.vn | Nguyen-Ba-Thanh | TV2 · Kiểm số và thiết kế pilot; tiếp quản code sau giải lao |
 |   3 |        |      |       |        |         |
 |   4 |        |      |       |        |         |
@@ -37,19 +37,19 @@ Ví dụ: `report/team/20241234_NguyenVanAn.md`.
 
 Sao chép mục dưới đây cho từng thành viên.
 
-## HoVaTen-MSSV
+## Thành viên 1 · Người viết code A–B
 
 ### Phần việc phụ trách
 
--
+- Xây dựng mô hình chi phí từ trace và chạy các kịch bản độ nhạy trong `src/lab13.py`.
 
 ### Đóng góp cụ thể
 
--
+- Triển khai A1–A4 và B1–B4. Chạy script trong môi trường `.venv` và chuẩn bị số liệu để TV2 kiểm tra, tiếp quản phần D1.
 
 ### Bằng chứng
 
--
+- Ba phép thử A1 đều ĐẠT. Kết quả A–B được ghi trong `report/team/bang_chi_phi.md`. Bản ghép đã được Codex chạy lại trong môi trường máy TV2: A1 đạt, in hết A–B và D1; TV2 tự giải thích kết quả trước khi nộp.
 
 ## NguyenBaThanh-2A202603499 · TV2
 
@@ -63,7 +63,7 @@ Thông tin tên/MSSV lấy theo file cá nhân đã có trong repo; thành viên
 ### Đóng góp cụ thể
 
 - Đã chuẩn bị cùng Codex: bảng chi phí đầy đủ từ CSV bằng phép tính độc lập, phần D1 và chế độ kiểm số trong `src/lab13.py`, kế hoạch pilot chia 20+20 nhân viên và 4 luật dừng.
-- Phần A/B của TV1 còn khung chưa triển khai: chưa ghi nhận đã bàn giao hoặc đã chạy hết script nhóm. Thành viên cần tự chạy các lệnh, kiểm phép tính tay và xác nhận hiểu kết quả trước khi nộp.
+- Đã nhận A/B của TV1 từ `97c5410`; Codex đã chạy lại toàn bộ script trong môi trường máy TV2, xác nhận 3 phép thử A1 và 15 cấu hình khớp tính độc lập. Thành viên cần tự kiểm phép tính tay và xác nhận hiểu kết quả trước khi nộp.
 
 ### Bằng chứng
 

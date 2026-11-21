@@ -1,7 +1,7 @@
 # Bàn giao phần TV2 — Kiểm số và thiết kế pilot
 
 Đã chuẩn bị `bang_chi_phi.md`, `pilot_plan.yaml`, báo cáo cá nhân và phần kiểm số/D1 trong `src/lab13.py`.
-Phần A/B của TV1 hiện chưa triển khai; các bảng dùng kết quả tính độc lập từ CSV trong chính `lab13.py`, không ghi nhận đã nhận bàn giao.
+Đã nhận A/B của TV1 từ commit `97c5410` ngày 21/11/2026; đã ghép với phần TV2. Codex chạy toàn bộ script trong môi trường máy TV2, xác nhận A1 và 15 cấu hình đối chiếu ĐẠT; số trong bảng không cần thay đổi.
 
 ## 1. TV2 phụ thuộc TV1 ở đâu
 
@@ -16,7 +16,7 @@ Phần A/B của TV1 hiện chưa triển khai; các bảng dùng kết quả t�
 
 TV1 cần giữ chữ ký `mo_hinh(runs, reqs, gia_vao, gia_ra, gia_tool, luong_phut, he_so_xem_lai, he_so_lam_lai, max_lan_chay)`.
 Hàm phải lọc lượt theo `request_id`, giữ mọi lượt lỗi, không sửa DataFrame gốc; khi cắt lượt thì ca vượt giới hạn chuyển nhân viên, cả hai cột phút bằng 0.
-Khối cuối của TV1 cần in đủ bảng A/B; giữ các hàm TV2 và lời gọi `in_d1()` để script cuối in D1.
+Bản ghép đã giữ khối in A/B của TV1, các hàm kiểm số/D1 của TV2 và lời gọi `in_d1()` ở cuối; script in đủ A2–A4, B1–B4, D1.
 
 ## 2. Chạy và kiểm tra
 
@@ -30,9 +30,9 @@ Set-Location src
 ../.venv/Scripts/python.exe -c "import yaml; yaml.safe_load(open('../report/team/pilot_plan.yaml', encoding='utf-8-sig')); print('YAML OK')"
 ```
 
-`--kiem-so` kiểm A/B độc lập và báo rõ chờ TV1 khi A1 hoặc `mo_hinh` chưa triển khai; trạng thái đó không phải A1 ĐẠT.
-Khi A/B đã có, cùng lệnh tự kiểm A1 và đối chiếu **15 cấu hình**: 1 gốc, 4 loại, 9 kịch bản đơn và 1 cặp.
-Sau đó chạy `../.venv/Scripts/python.exe lab13.py`; nếu không in đủ bảng A/B thì TV1 còn cần bổ sung khối chạy, dù kiểm số hàm đã đạt.
+`--kiem-so` đã xác nhận A1 và **15 cấu hình**: 1 gốc, 4 loại, 9 kịch bản đơn và 1 cặp.
+Lệnh `../.venv/Scripts/python.exe lab13.py` đã chạy hết và in đủ A–B cùng D1; output lưu ở [kiem_chung_tv2.txt](kiem_chung_tv2.txt).
+Đây là kiểm tra chạy bằng Codex; thành viên vẫn tự đọc kết quả, tính tay và giải thích trước khi nộp.
 
 ## 3. Số bàn giao cho TV3 và TV4
 
@@ -52,28 +52,20 @@ Sau đó chạy `../.venv/Scripts/python.exe lab13.py`; nếu không in đủ b�
 TV3 dùng số B trong rủi ro, đặc tả đủ event để tính luật dừng và phút thật; TV4 ghi rõ đánh đổi MDE và chi phí xem lại 100% trong hồ sơ.
 Chưa có chữ ký chấp thuận hoặc roster thực; không ghi các điều kiện đã hoàn tất. Không tự chấm hội đồng hoặc tạo hai bộ nhãn độc lập.
 
-## 4. Cách nhận code TV1 mà giữ phần TV2
+## 4. Bàn giao Git đã thực hiện
 
-Trước khi pull, commit riêng các file TV2. Từ gốc repo:
-
-```powershell
-git status --short
-git add -- src/lab13.py report/team/bang_chi_phi.md report/team/pilot_plan.yaml report/team/2A202603499_NguyenBaThanh.md report/team/ban_giao_tv2.md report/team/kiem_chung_tv2.txt TEAM.md
-git commit -m "Complete TV2 cost checks and pilot design"
-git branch --show-current
-git pull --no-rebase
-```
-
-Các lệnh trên là hướng dẫn, chưa được thực hiện tự động. `git pull --no-rebase` giả định nhánh hiện tại đã theo dõi đúng nhánh nhóm; nếu chưa thì kiểm tra `git branch -vv` và chốt nhánh với nhóm trước.
-Cùng sửa `src/lab13.py` có thể xung đột: giữ A/B TV1, giữ hàm kiểm số/D1 và CLI TV2, ghép khối chạy rồi chạy lại các kiểm tra.
-Không chọn ghi đè nguyên file theo một phía; không dùng `reset --hard`, `clean -fd` hoặc bỏ stash khi chưa kiểm tra nội dung.
+- Sao lưu ngoài repo: `../TV2_Backup/TV2_before_merge_20261121_153052.zip`.
+- Commit phần TV2 trước ghép: `34da9c0`; lấy TV1 bằng `git fetch origin main`, commit `97c5410`.
+- Ghép A/B TV1 và kiểm số/D1 TV2; giải quyết xung đột ở `TEAM.md`, `bang_chi_phi.md` bằng đối chiếu nội dung và kết quả, giữ thông tin email/GitHub đã điền.
+- Chạy lại cả script, 15 cấu hình, D1 và đọc YAML; không thay hai CSV hoặc bản starter.
+- Chưa push phần TV2 lên GitHub. Sau khi kiểm tra commit cuối, có thể dùng `git push origin main`; nếu nhóm có thay đổi mới thì fetch/merge lại, không force-push.
 
 ## 5. Checklist cá nhân cần làm thật
 
-- [ ] Xác nhận tên Nguyễn Bá Thành, MSSV 2A202603499 và bổ sung email/GitHub.
+- [ ] Xác nhận tên Nguyễn Bá Thành, MSSV 2A202603499 và email/GitHub đã đồng bộ từ TEAM.md.
 - [ ] Tự tính lại ít nhất 1 phép tính A2; giải thích vì sao không cộng phí chạy lại hai lần.
 - [ ] Tự chạy `--kiem-so` và `--pilot-only`; đọc kết quả thay vì chỉ chép số.
-- [ ] Nhận code TV1, chạy A1 và 15 cấu hình đối chiếu; chạy toàn bộ script trên máy mình.
+- [x] Codex đã nhận code TV1, kiểm A1/15 cấu hình và chạy hết script trong môi trường máy TV2; thành viên vẫn cần tự đọc, hiểu kết quả.
 - [ ] Thống nhất MDE +6, phạm vi pilot, ngưỡng và ngày đề xuất với nhóm; TV4 cập nhật hồ sơ.
 - [ ] Commit phần đóng góp thật, ghi mã commit vào báo cáo; phối hợp TV4 cập nhật TEAM.
 - [ ] Kiểm tra repo GitHub mở được rồi tự nộp cùng link nhóm trên LMS trước hạn của lớp.

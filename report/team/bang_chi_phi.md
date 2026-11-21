@@ -2,15 +2,15 @@
 
 TV2 tính độc lập từ CSV bằng `kiem_so_doc_lap()` trong `src/lab13.py`; chạy `python lab13.py --kiem-so` trong `src/`.
 Số tiền làm tròn đến đồng, hóa đơn/yêu cầu giữ 1 chữ số thập phân. Toàn bộ dữ liệu là giả lập; kết quả có giờ nhân viên ghi `simulated`.
-**Bàn giao:** đã kiểm số độc lập; còn chờ TV1 hoàn thiện A–B để đối chiếu với `mo_hinh`. Chưa xác nhận code A1 của nhóm đạt.
+**Bàn giao đã kiểm chứng ngày 21/11/2026:** nhận A–B của TV1 từ commit `97c5410`; 3 phép thử A1 và 15 cấu hình đối chiếu với `mo_hinh` đều ĐẠT. Script ghép đã chạy hết A–B và D1 trong môi trường máy TV2 qua Codex.
 
 ## A1 · Ba phép thử đáp án biết trước
 
 | Phép thử (p = 0,8) | Tính tay đối chiếu của TV2 | Trạng thái code TV1 |
 | --- | --- | --- |
-| Số lần chạy trung bình, tối đa 2 lần | `(1 − 0,2²) / 0,8 = 1,20` | Chờ chạy A1 |
-| Số lần chạy trung bình, chạy đến khi đúng | `1 / 0,8 = 1,25` | Chờ chạy A1 |
-| Hệ số chi phí mỗi việc thành công, tối đa 3 lần | `[(1 − 0,2³) / 0,8] / (1 − 0,2³) = 1,25` | Chờ chạy A1 |
+| Số lần chạy trung bình, tối đa 2 lần | `(1 − 0,2²) / 0,8 = 1,20` | ĐẠT, khớp tính tay |
+| Số lần chạy trung bình, chạy đến khi đúng | `1 / 0,8 = 1,25` | ĐẠT, khớp tính tay |
+| Hệ số chi phí mỗi việc thành công, tối đa 3 lần | `[(1 − 0,2³) / 0,8] / (1 − 0,2³) = 1,25` | ĐẠT, khớp tính tay |
 
 ## A2 · Mô hình chi phí từ trace
 
@@ -120,5 +120,5 @@ Giữ tối đa **3** lượt như đề B4; B3 là kịch bản riêng. Trong *
 ## Bằng chứng và bước chốt với TV1
 
 - Nguồn: hai CSV gốc; `docs/du_lieu_va_cong_thuc.md`, `docs/Lab13_Huong_dan_chi_tiet_buoi_chieu.md` và đề Word.
-- `python lab13.py --kiem-so` kiểm tổng phút, mẫu số, quan hệ gấp đôi/giảm nửa và B2; khi code được bàn giao sẽ đối chiếu **15** cấu hình với TV1.
-- Chỉ chốt khi **3** phép thử A1 và **15** cấu hình cùng đạt; sau đó chạy `python lab13.py` từ đầu đến cuối và kiểm đủ bảng A–B, D1.
+- `python lab13.py --kiem-so` kiểm tổng phút, mẫu số, quan hệ gấp đôi/giảm nửa và B2; đã đối chiếu **15** cấu hình với code TV1, tất cả khớp ở sai số tính số thực.
+- Đã chốt **3** phép thử A1, **15** cấu hình; `python lab13.py` chạy từ đầu đến cuối và in đủ A2–A4, B1–B4, D1. Output lưu tại [kiem_chung_tv2.txt](kiem_chung_tv2.txt).

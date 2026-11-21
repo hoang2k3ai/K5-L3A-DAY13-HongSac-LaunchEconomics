@@ -109,7 +109,7 @@ pilot:
   decision_date: "2027-01-05"
   decision_rule: "Chỉ đề xuất mở rộng khi đủ mẫu/cụm và follow-up, chênh quan sát >=5 điểm phần trăm, khoảng tin cậy 95% có xét cụm loại trừ 0, an toàn trong ngưỡng, chi phí cả hệ thống đo thật gồm cố định <12.000 đ/yêu cầu. Không đạt thì No-go cho mở rộng hoặc trình kế hoạch mới; không tự kéo dài để tìm ý nghĩa thống kê. MDE +6 là đánh đổi phải được ký trước."
   prerequisite_actions:
-    - "TV1 hoàn thiện A1-A4, B1-B4; TV2 chạy kiểm số so với mo_hinh; chưa coi bảng độc lập là code A/B đã bàn giao"
+    - "Đã nhận A1-A4, B1-B4 từ TV1 commit 97c5410; Codex đã kiểm A1/15 cấu hình và chạy script ghép A-B-D1 trên môi trường máy TV2 ngày 2026-11-21; thành viên tự xác nhận hiểu kết quả trước khi nộp"
     - "COO duyệt ngày 2026-11-22: roster đủ 40 người/12 depot, ngẫu nhiên 20+20, đánh đổi MDE +6 và kinh phí pha xem lại 100%"
     - "Kỹ sư trưởng kiểm thử khóa chống trùng, xác nhận sổ cái và nút tắt trước 2026-11-23; TV3 cung cấp đặc tả event và kế hoạch kiểm toán lỗi ngầm"
   simulated_inputs:

@@ -4,7 +4,8 @@
 
 - Họ tên: Nguyễn Bá Thành.
 - MSSV: 2A202603499.
-- Email: chưa cung cấp, cần bổ sung trước khi nộp.
+- Email: 26ai.thanhnb3@vinuni.edu.vn.
+- GitHub: Nguyen-Ba-Thanh.
 - Vai: **TV2 · Kiểm số và thiết kế pilot**; tiếp quản code sau giải lao.
 - Nhóm: Hồng Sắc; lớp L3A, theo tên repo.
 - Tên/MSSV được điền theo file cá nhân đã có trong repo; cần thành viên xác nhận.
@@ -34,18 +35,18 @@ Chia 20 cụm/nhánh có trần hiệu dụng **1.000 < 1.251**; tăng thời gi
 
 - [bang_chi_phi.md](bang_chi_phi.md): A1–A4, B1–B4, nhãn `simulated`, công thức tính tay và nguồn.
 - [pilot_plan.yaml](pilot_plan.yaml): D1/D2 ở chú thích, thiết kế và các ngưỡng; số lượng mẫu thực ghi rõ **5.980/nhánh**, không nhầm với **859** hiệu dụng.
-- [src/lab13.py](../../src/lab13.py): `kiem_so_doc_lap`, `co_mau_hai_ti_le`, `tinh_d1`, cờ `--kiem-so` và `--pilot-only`; phần A/B của TV1 được giữ nguyên để nhận bàn giao.
+- [src/lab13.py](../../src/lab13.py): `kiem_so_doc_lap`, `co_mau_hai_ti_le`, `tinh_d1`, cờ `--kiem-so` và `--pilot-only`; đã ghép phần A/B của TV1 từ commit `97c5410`, giữ các hàm kiểm số và D1 của TV2.
 - [ban_giao_tv2.md](ban_giao_tv2.md): các lệnh chạy, phụ thuộc TV1, đầu vào cho TV3/TV4 và checklist cá nhân.
-- [kiem_chung_tv2.txt](kiem_chung_tv2.txt): output kiểm số và D1 tạo từ script trên bản hiện tại; có trạng thái chờ TV1.
-- Commit TV2: chưa tạo; chỉ điền mã commit thật sau khi commit. Chưa ghi nhận kiểm tra trên máy khác hoặc kết quả duyệt chéo.
+- [kiem_chung_tv2.txt](kiem_chung_tv2.txt): output kiểm số và D1 tạo từ script trên bản hiện tại; xác nhận A1 và 15 cấu hình A/B của TV1 ĐẠT, cùng output chạy toàn bộ A–B và D1.
+- Commit phần TV2 trước bàn giao: `34da9c0`. Commit A/B của TV1: `97c5410`. Bản ghép được Codex chạy lại trong môi trường máy TV2; chưa ghi nhận kết quả duyệt chéo hoặc việc thành viên đã tự tính tay.
 
 ## 5. Công cụ AI đã dùng
 
 **Codex/ChatGPT** hỗ trợ đọc tài liệu repo, giải thích công thức, viết phần kiểm số/D1, soạn bảng và kế hoạch, cài thư viện trong môi trường ảo, chạy kiểm tra.
 Không gọi mô hình qua API; không sửa CSV, không tạo nhãn độc lập hoặc điểm hội đồng thay TV3/TV4.
 
-**Kiểm tra tự động đã thực hiện trong phiên hỗ trợ:** cộng độc lập bằng `csv.Decimal` (module `csv` + lớp `decimal.Decimal`), kiểm quan hệ gấp đôi/giảm nửa và tính cộng B2, tính lại 5 câu D1, tính power bằng statsmodels và đọc YAML bằng `yaml.safe_load`.
-Đối chiếu hướng dẫn nội bộ; riêng B4, **12.414,79 đ** được làm tròn thành **12.415 đ** (`simulated`), khác xấp xỉ 12.414 đ trong tài liệu dưới **1 đ**.
+**Kiểm tra tự động đã thực hiện trong phiên hỗ trợ:** cộng độc lập bằng module `csv` và lớp `decimal.Decimal`, kiểm quan hệ gấp đôi/giảm nửa và tính cộng B2, tính lại 5 câu D1, tính power bằng statsmodels và đọc YAML bằng `yaml.safe_load`.
+Đã đối chiếu thêm 15 cấu hình với code TV1 và chạy toàn bộ script sau ghép; riêng B4, **12.414,79 đ** được làm tròn thành **12.415 đ** (`simulated`), khác xấp xỉ 12.414 đ trong tài liệu dưới **1 đ**.
 
 **Tự kiểm tra của thành viên trước khi nộp:** tự tính lại phép tính A2 ở mục 3; chạy 2 lệnh dưới đây; sau khi pull TV1 chạy cả script và giải thích được tử số/mẫu số, trần cỡ mẫu và lựa chọn 2 lượt. Chỉ đánh dấu hoàn thành sau khi đã thực hiện thật.
 
@@ -63,6 +64,6 @@ Nếu môi trường ảo nằm ở `src/.venv` theo hướng dẫn nhóm, thay 
 
 ## 6. Tự đánh giá
 
-Bộ tài liệu đã chuẩn bị đủ phần kiểm số và thiết kế của TV2; việc chốt A–B với code TV1 còn chờ bàn giao.
+Bộ tài liệu đã có đủ phần kiểm số và thiết kế của TV2; đã nhận A–B từ TV1, ghép code, kiểm 3 phép thử A1/15 cấu hình và chạy hết script trong phiên hỗ trợ.
 Kế hoạch chấp nhận MDE **+6 điểm**: nếu hiệu quả thật chỉ **+5 điểm**, power xấp xỉ **64,18%**, không phải 80%; các con số chi phí giờ người vẫn là `simulated` cho đến khi đo phút thật.
-Trước nộp cần xác nhận thông tin cá nhân, tự kiểm số/chạy code, bổ sung commit thật, phối hợp TV4 ghi đóng góp cuối và tự nộp link LMS; chưa tuyên bố các việc này đã hoàn thành.
+Trước nộp cần xác nhận thông tin cá nhân, tự kiểm số/chạy code, đối chiếu các commit đã ghi, phối hợp TV4 ghi đóng góp cuối và tự nộp link LMS; chưa tuyên bố các việc này đã hoàn thành.
