@@ -11,7 +11,7 @@
 
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
-|   1 |        |      |       |        |         |
+|   1 |        |      |       |        | Người viết code A–B |
 |   2 |        |      |       |        |         |
 |   3 |        |      |       |        |         |
 |   4 |        |      |       |        |         |
@@ -37,16 +37,16 @@ Ví dụ: `report/team/20241234_NguyenVanAn.md`.
 
 Sao chép mục dưới đây cho từng thành viên.
 
-## HoVaTen-MSSV
+## Thành viên 1 · Người viết code A–B
 
 ### Phần việc phụ trách
 
--
+- Xây dựng mô hình chi phí từ trace và chạy các kịch bản độ nhạy trong `src/lab13.py`.
 
 ### Đóng góp cụ thể
 
--
+- Triển khai A1–A4 và B1–B4. Chạy script trong môi trường `.venv` và chuẩn bị số liệu để TV2 kiểm tra, tiếp quản phần D1.
 
 ### Bằng chứng
 
--
+- Ba phép thử A1 đều ĐẠT. Kết quả A–B được ghi trong `report/team/bang_chi_phi.md`. Chưa xác nhận lần chạy trên máy TV2.
