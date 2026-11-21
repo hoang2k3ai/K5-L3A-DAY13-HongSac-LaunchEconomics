@@ -20,7 +20,7 @@ Bản nháp có hỗ trợ Codex; thành viên cần tự đọc, kiểm tra và
 - Với hỗ trợ Codex, soạn nhãn đề xuất và giải thích cho 20 ca theo nguyên nhân gốc; điền cột TV3 và 5 phương án phát hiện, khắc phục, phân công vai trò trong `bang_loi.md`.
 - Hoàn thiện `chi_so.md`: 3 chỉ số từ CSV, 2 chỉ số đề xuất, 13 event có `trace_id` và liên kết event với công thức tính.
 - Tổng hợp 2 rủi ro từ B1/B4 của TV1–TV2; giữ nhãn `simulated`, ghi rõ phạm vi và điều kiện áp dụng.
-- Chưa có bộ nhãn TV4, kết quả đối chiếu hoặc đồng thuận; các mục này giữ trạng thái chờ.
+- Đã đối chiếu với TV4: 19/20 trùng, ca 13 thống nhất "Giới hạn hệ thống"; chi tiết trong `bang_loi.md`.
 
 ## 4. Bằng chứng
 

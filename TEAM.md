@@ -92,7 +92,7 @@ Vai trò: người kiểm số và thiết kế pilot; thông tin liên hệ ghi
 - [Bảng lỗi](report/team/bang_loi.md): 20 nhãn TV3 có hỗ trợ AI, lý do và 5 phương án khắc phục; chưa có nhãn TV4 hoặc tỉ lệ đồng thuận.
 - [Chỉ số](report/team/chi_so.md): **82,83%**, **27,12%**, **4,25%** trên dữ liệu giả lập; hai rủi ro chi phí giữ nhãn `simulated`.
 - [Báo cáo cá nhân Lê Nhật Linh](report/team/2A202603514_LeNhatLinh.md): khai phần việc, hỗ trợ AI và cách kiểm chứng; cần thành viên tự rà soát trước khi nộp.
-- Chưa có bằng chứng triển khai event hay kết quả pilot. Nhiệm vụ C còn chờ đối chiếu thật với TV4.
+- Chưa có bằng chứng triển khai event hay kết quả pilot. Nhiệm vụ C đã đối chiếu với TV4: 19/20 trùng, ca 13 đã thống nhất.
 ## Lê Hồng Quân · 2A202603705 · TV4 · Giữ hồ sơ và điều phối duyệt chéo
 
 ### Phần việc phụ trách
@@ -107,5 +107,5 @@ Vai trò: người kiểm số và thiết kế pilot; thông tin liên hệ ghi
 ### Bằng chứng và việc còn chờ
 
 - [Hồ sơ launch v0](report/team/ho_so_launch_v0.md), [báo cáo nhóm](report/team/group_report.md).
-- [Bảng lỗi](report/team/bang_loi.md): 20 nhãn TV4 do agent Claude sinh độc lập với bản nháp TV3 (không phải nhãn người tự gắn, TV4 cần xác nhận); đồng thuận **19/20 = 95%**, ca 13 bất đồng, đã viết quy tắc.
-- **Chưa làm:** phiếu chấm nhóm khác (`phieu_cham.md`) cần hồ sơ của nhóm n + 1; TV4 chưa tự xác nhận nhãn.
+- [Bảng lỗi](report/team/bang_loi.md): 20 nhãn TV4 do agent Claude sinh độc lập với bản nháp TV3, TV4 đã rà soát; đồng thuận **19/20 = 95%**, ca 13 bất đồng, đã viết quy tắc.
+- **Chưa làm:** phiếu chấm nhóm khác (`phieu_cham.md`) vì chưa có hồ sơ nhóm n + 1; không ghi là đã chấm.

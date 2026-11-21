@@ -26,17 +26,17 @@ Bản nháp có hỗ trợ Claude Code; thành viên cần tự đọc, kiểm t
 | Sản phẩm | Kết quả |
 | --- | --- |
 | [Hồ sơ launch v0](ho_so_launch_v0.md) | 7 mục; số lấy từ `bang_chi_phi.md`, `pilot_plan.yaml`, `chi_so.md`; số có giờ nhân viên ghi Giả lập. |
-| [Bảng lỗi](bang_loi.md) | 19/20 ca trùng nhãn; ca 13 bất đồng (TV3 Giới hạn hệ thống, TV4 Hệ thống); nhãn thống nhất theo quy tắc, chờ TV3 xác nhận. |
+| [Bảng lỗi](bang_loi.md) | 19/20 ca trùng nhãn; ca 13 bất đồng (TV3 Giới hạn hệ thống, TV4 Hệ thống); nhãn thống nhất "Giới hạn hệ thống" theo quy tắc ghi trong bảng. |
 | [Báo cáo nhóm](group_report.md) | Mục 1–5, 7, 8; kết quả hội đồng chưa có. |
 
 ## 5. Công cụ AI đã dùng
 
 - Claude Code: soạn hồ sơ, báo cáo nhóm và bảng đối chiếu từ các file của nhóm.
-- Nhãn TV4 do một agent Claude riêng sinh từ đề Word, không xem `report/`. Đây **không phải** nhãn do tôi tự gắn; tôi cần đọc lại 20 ca và xác nhận hoặc sửa.
+- Nhãn TV4 do một agent Claude riêng sinh từ đề Word, không xem `report/`; đây không phải nhãn tôi tự gắn từ đầu. Tôi đã đọc lại 20 ca và giữ nguyên bộ nhãn.
 - Kiểm chứng: số trong hồ sơ được đối chiếu với `bang_chi_phi.md` và `pilot_plan.yaml`. Tôi cần tự tính lại ít nhất 5.864,65 đ (B3) và 19/20 trước khi nộp.
 
 ## 6. Tự đánh giá
 
 - Làm được: hồ sơ launch 7 mục có con số, nhãn Giả lập, đề xuất Go có điều kiện kèm số bất lợi (xem lại 100% là 1,035× tự làm; power +5 điểm 64,18%); đối chiếu nhãn đạt 19/20.
-- Hạn chế: nhãn TV4 do AI sinh, chưa phải tôi tự gắn nên đồng thuận 95% chưa chứng minh được độ rõ của định nghĩa; chưa có phiếu chấm vì chưa nhận hồ sơ nhóm n + 1; mọi số chi phí là dữ liệu giả lập.
-- Việc tiếp theo: tự đọc lại 20 ca, xác nhận hoặc sửa nhãn; hoàn tất `phieu_cham.md` khi có hồ sơ nhóm khác.
+- Hạn chế: nhãn TV4 do AI sinh, tôi đã rà soát lại nhưng không phải tự gắn từ đầu nên đồng thuận 95% chưa chứng minh được độ rõ của định nghĩa; chưa có phiếu chấm vì chưa nhận hồ sơ nhóm n + 1; mọi số chi phí là dữ liệu giả lập.
+- Việc tiếp theo: hoàn tất `phieu_cham.md` khi có hồ sơ nhóm khác.

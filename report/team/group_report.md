@@ -17,7 +17,7 @@ Quyết định có nên pilot trợ lý hoàn phí LogiX-VN ở Gate 2a hay kh�
 Tóm tắt cách nhóm làm từng nhiệm vụ A–E và link tới file hồ sơ tương ứng.
 
 - A–B: [bang_chi_phi.md](bang_chi_phi.md) · mô hình chi phí từ trace, độ nhạy, giới hạn chạy lại, xem lại 100%.
-- C: [bang_loi.md](bang_loi.md) · 20 ca, 5 ca khắc phục; đồng thuận hai người gắn nhãn còn chờ.
+- C: [bang_loi.md](bang_loi.md) · 20 ca, 5 ca khắc phục; đồng thuận ban đầu 19/20 = 95%, ca 13 đã thống nhất.
 - D: [pilot_plan.yaml](pilot_plan.yaml) · ngẫu nhiên theo nhân viên 20+20, 4 luật dừng.
 - E: [chi_so.md](chi_so.md), [ho_so_launch_v0.md](ho_so_launch_v0.md).
 
@@ -32,7 +32,7 @@ Con số chính (ghi nhãn `simulated` khi cần) và đề xuất cuối của 
 
 ## 5. Khó khăn và cách xử lý
 
-Hai bộ nhãn độc lập chưa hoàn tất trước khi viết hồ sơ nên mục 5 ghi "Chưa". Vì không có dữ liệu thật, mọi số chi phí giữ nhãn `simulated` và hồ sơ không viết trợ lý đã nâng chỉ số. Nhiều phần được soạn có hỗ trợ AI; từng thành viên khai và tự kiểm chứng trong báo cáo cá nhân.
+Mục 5 ghi "Chưa" vì các cách khắc phục mới là đề xuất, chưa triển khai; hai bộ nhãn đều có AI hỗ trợ. Vì không có dữ liệu thật, mọi số chi phí giữ nhãn `simulated` và hồ sơ không viết trợ lý đã nâng chỉ số. Nhiều phần được soạn có hỗ trợ AI; từng thành viên khai và tự kiểm chứng trong báo cáo cá nhân.
 
 ## 6. Tổng hợp đóng góp
 

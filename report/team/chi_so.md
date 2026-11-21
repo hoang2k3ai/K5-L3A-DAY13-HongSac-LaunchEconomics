@@ -72,4 +72,4 @@ Mốc 4,89% tính tay từ 48 ca làm lại / 982 yêu cầu trong phạm vi, kh
 
 - TV4 có thể dùng ba chỉ số, đặc tả event và hai rủi ro này cho mục 4 và 7 của hồ sơ; các rủi ro chi phí phải giữ nhãn `simulated`.
 - Trước khi bật pilot, Kỹ sư trưởng xác minh event thực sự được ghi đủ cho hai nhánh; đây mới là đặc tả, chưa có bằng chứng triển khai.
-- Bảng nhãn lỗi và đồng thuận còn chờ dữ liệu thực tế của hai người, xem [bang_loi.md](bang_loi.md). TV3 ghi hỗ trợ Codex và cách kiểm số trong báo cáo cá nhân.
+- Bảng nhãn lỗi và đồng thuận (19/20) xem [bang_loi.md](bang_loi.md); hai bộ nhãn có AI hỗ trợ. TV3 ghi hỗ trợ Codex và cách kiểm số trong báo cáo cá nhân.
