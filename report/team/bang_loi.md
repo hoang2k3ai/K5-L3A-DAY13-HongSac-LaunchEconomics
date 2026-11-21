@@ -36,37 +36,40 @@ Phân bố nhãn đề xuất: Do người dùng **4**; Hệ thống **5**; Ng�
 
 ## Bảng nhãn TV3 và đối chiếu với TV4
 
-Người gắn nhãn 1: TV3, đã điền bản nháp có hỗ trợ Codex từ bảng đề xuất bên trên, chờ tự kiểm tra; chưa có bằng chứng gắn nhãn độc lập. Người gắn nhãn 2: TV4, chưa có bộ nhãn được cung cấp.
+Người gắn nhãn 1: TV3, đã điền bản nháp có hỗ trợ Codex từ bảng đề xuất bên trên, chờ tự kiểm tra; chưa có bằng chứng gắn nhãn độc lập. Người gắn nhãn 2: TV4. **Cách TV4 có nhãn:** bộ nhãn do một agent Claude riêng sinh ra, chỉ đọc đề Word (mục "Nhiệm vụ C") và không được xem `report/`, nên không thấy nhãn TV3. Đây là nhãn AI độc lập với bản nháp của TV3 nhưng **không phải nhãn do người tự gắn**; TV4 cần đọc lại và xác nhận hoặc sửa trước khi nộp. Bản nháp TV3 cũng có hỗ trợ AI (Codex).
 Giữ nguyên hai bộ nhãn ban đầu sau khi đối chiếu; chỉ ghi kết quả thảo luận vào cột nhãn thống nhất.
 
 | Ca | Nhãn TV3 (có hỗ trợ AI) | Nhãn TV4 | Trùng? | Nhãn thống nhất |
 | --: | --- | --- | --- | --- |
-| 1 | Do người dùng | ... | ... | ... |
-| 2 | Hệ thống | ... | ... | ... |
-| 3 | Ngữ cảnh | ... | ... | ... |
-| 4 | Giới hạn hệ thống | ... | ... | ... |
-| 5 | Ngầm | ... | ... | ... |
-| 6 | Do người dùng | ... | ... | ... |
-| 7 | Hệ thống | ... | ... | ... |
-| 8 | Hệ thống | ... | ... | ... |
-| 9 | Do người dùng | ... | ... | ... |
-| 10 | Ngữ cảnh | ... | ... | ... |
-| 11 | Giới hạn hệ thống | ... | ... | ... |
-| 12 | Ngầm | ... | ... | ... |
-| 13 | Giới hạn hệ thống | ... | ... | ... |
-| 14 | Do người dùng | ... | ... | ... |
-| 15 | Hệ thống | ... | ... | ... |
-| 16 | Ngữ cảnh | ... | ... | ... |
-| 17 | Ngầm | ... | ... | ... |
-| 18 | Ngữ cảnh | ... | ... | ... |
-| 19 | Giới hạn hệ thống | ... | ... | ... |
-| 20 | Hệ thống | ... | ... | ... |
+| 1 | Do người dùng | Do người dùng | Có | Do người dùng |
+| 2 | Hệ thống | Hệ thống | Có | Hệ thống |
+| 3 | Ngữ cảnh | Ngữ cảnh | Có | Ngữ cảnh |
+| 4 | Giới hạn hệ thống | Giới hạn hệ thống | Có | Giới hạn hệ thống |
+| 5 | Ngầm | Ngầm | Có | Ngầm |
+| 6 | Do người dùng | Do người dùng | Có | Do người dùng |
+| 7 | Hệ thống | Hệ thống | Có | Hệ thống |
+| 8 | Hệ thống | Hệ thống | Có | Hệ thống |
+| 9 | Do người dùng | Do người dùng | Có | Do người dùng |
+| 10 | Ngữ cảnh | Ngữ cảnh | Có | Ngữ cảnh |
+| 11 | Giới hạn hệ thống | Giới hạn hệ thống | Có | Giới hạn hệ thống |
+| 12 | Ngầm | Ngầm | Có | Ngầm |
+| 13 | Giới hạn hệ thống | Hệ thống | **Không** | Giới hạn hệ thống (đề xuất, chờ TV3 xác nhận) |
+| 14 | Do người dùng | Do người dùng | Có | Do người dùng |
+| 15 | Hệ thống | Hệ thống | Có | Hệ thống |
+| 16 | Ngữ cảnh | Ngữ cảnh | Có | Ngữ cảnh |
+| 17 | Ngầm | Ngầm | Có | Ngầm |
+| 18 | Ngữ cảnh | Ngữ cảnh | Có | Ngữ cảnh |
+| 19 | Giới hạn hệ thống | Giới hạn hệ thống | Có | Giới hạn hệ thống |
+| 20 | Hệ thống | Hệ thống | Có | Hệ thống |
 
-**Tỉ lệ đồng thuận:** Chưa tính vì chưa có hai bộ nhãn thực tế. Công thức: số ca trùng nhãn ban đầu / 20 × 100%; mục tiêu ít nhất 16/20 = 80%.
+**Tỉ lệ đồng thuận ban đầu: 19/20 = 95%** (đạt mục tiêu ≥16/20; chỉ ca 13 không trùng). Công thức: số ca trùng nhãn ban đầu / 20 × 100%; mục tiêu ít nhất 16/20 = 80%.
 
 ## Quy tắc phân biệt cho các ca không trùng
 
-Chưa có kết quả đối chiếu để xác định ca bất đồng. Khi có hai bộ nhãn, ghi mỗi ca bất đồng một câu; nếu đồng thuận dưới 80% thì viết lại định nghĩa, vẫn giữ bộ nhãn ban đầu.
+Một ca bất đồng (ca 13). Đồng thuận 95% ≥ 80% nên không phải viết lại định nghĩa. Hai bộ nhãn ban đầu được giữ nguyên.
+
+- **Ca 13 (TV3: Giới hạn hệ thống · TV4: Hệ thống):** yêu cầu hoàn phí bảo hiểm của đối tác nằm ngoài phạm vi; nguyên nhân gốc là ngoài phạm vi nên gắn Giới hạn hệ thống, còn việc trợ lý trả lời chung chung, không nói rõ không xử lý được, là điểm cần khắc phục (cột khắc phục, không đổi nhãn). Quy tắc: ngoài phạm vi là giới hạn, kể cả khi cách diễn đạt giới hạn chưa tốt; chỉ gắn Hệ thống nếu trợ lý đưa thông tin sai trong phạm vi đã hỗ trợ. Nhãn thống nhất đang ghi theo quy tắc này, **chờ TV3 và TV4 xác nhận**.
+- Ca dễ nhầm khác dù đã trùng: 9 (nhập nhầm loại mã là do người dùng), 18 (số tiền đúng, thiếu giải thích là ngữ cảnh), 7 và 20 (hệ thống), 8 (thông tin sai đã hiển thị là hệ thống, không phải ngầm).
 
 - Quy tắc tham khảo cho ca 6, 9: phân loại theo đầu vào sai của khách; cách trợ lý hướng dẫn nằm ở cột khắc phục.
 - Quy tắc tham khảo cho ca 13: ngoài phạm vi là giới hạn, dù trợ lý diễn đạt giới hạn chưa rõ.
@@ -89,5 +92,5 @@ Chưa có kết quả đối chiếu để xác định ca bất đồng. Khi c�
 ## Việc còn chờ trước khi bàn giao TV4
 
 - TV3 tự kiểm tra nhãn đề xuất và ghi trung thực cách dùng AI trong báo cáo cá nhân.
-- Nhận bộ nhãn thực tế của TV4, bảo toàn bộ nhãn ban đầu và ghi rõ quy trình hai người đã thực hiện.
-- Tính đồng thuận ban đầu, ghi ca bất đồng và nhãn thống nhất; chưa có bằng chứng thì chưa đánh dấu nhiệm vụ C hoàn thành.
+- TV4 đọc lại 20 nhãn AI ở trên, sửa nếu không đồng ý (nếu sửa, tính lại đồng thuận nhưng giữ bản gốc).
+- TV3 và TV4 xác nhận nhãn thống nhất ca 13.

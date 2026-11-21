@@ -2,8 +2,8 @@
 
 ## Thông tin nhóm
 
-- Tên nhóm:
-- Lớp: L3A hoặc L3B
+- Tên nhóm: HongSac
+- Lớp: L3A
 - Repo nhóm: `K5-L3A-DAY13-TenNhom-LaunchEconomics` (xem [SUBMISSION.md](SUBMISSION.md))
 - URL repo, nhánh nộp, commit chốt:
 
@@ -14,8 +14,8 @@
 | ---: | --------------- | ----------- | ----------------------------------------------------------------- | --------------- | ------------------------------------------------------------ |
 | 1   | Đào Huy Hoàng   | 2A202603451 |                                                                   | hoang2k3ai      | Người viết code A–B                                          |
 | 2   | Nguyễn Bá Thành | 2A202603499 | [26ai.thanhnb3@vinuni.edu.vn](mailto:26ai.thanhnb3@vinuni.edu.vn) | Nguyen-Ba-Thanh | TV2 · Kiểm số và thiết kế pilot; tiếp quản code sau giải lao |
-| 3   | Lê Nhật Linh    | 2A202603514 | [26ai.linhln@vinuni.edu.vn](mailto:26ai.linhln@vinuni.edu.vn)     |                 | TV3 · Phân tích lỗi và chỉ số; người gắn nhãn 1              |
-| 4   |                 |             |                                                                   |                 |                                                              |
+| 3   | Lê Nhật Linh    | 2A202603514 | [26ai.linhln@vinuni.edu.vn](mailto:26ai.linhln@vinuni.edu.vn)     |             nhatlinh056    | TV3 · Phân tích lỗi và chỉ số; người gắn nhãn 1              |
+| 4   | Lê Hồng Quân| 2A202603705                                | LeHongQuanMarble | TV4 · Giữ hồ sơ và điều phối duyệt chéo; người gắn nhãn 2   |
 
 
 Bốn vai của lab:
@@ -93,3 +93,19 @@ Vai trò: người kiểm số và thiết kế pilot; thông tin liên hệ ghi
 - [Chỉ số](report/team/chi_so.md): **82,83%**, **27,12%**, **4,25%** trên dữ liệu giả lập; hai rủi ro chi phí giữ nhãn `simulated`.
 - [Báo cáo cá nhân Lê Nhật Linh](report/team/2A202603514_LeNhatLinh.md): khai phần việc, hỗ trợ AI và cách kiểm chứng; cần thành viên tự rà soát trước khi nộp.
 - Chưa có bằng chứng triển khai event hay kết quả pilot. Nhiệm vụ C còn chờ đối chiếu thật với TV4.
+## Lê Hồng Quân · 2A202603705 · TV4 · Giữ hồ sơ và điều phối duyệt chéo
+
+### Phần việc phụ trách
+
+- Điền `TEAM.md`; giữ `ho_so_launch_v0.md` (7 mục) và cập nhật theo số TV1–TV3; gom kết quả A–E, chốt đề xuất với nhóm, gửi hồ sơ lúc 17:00.
+- Gắn nhãn độc lập 20 ca (người gắn nhãn 2), so với TV3 và cùng viết quy tắc cho ca bất đồng; tổng hợp phiếu chấm nhóm khác và `group_report.md`.
+
+### Đóng góp cụ thể
+
+- Với hỗ trợ Claude Code, điền cột TV4 và đối chiếu trong `bang_loi.md`, soạn `ho_so_launch_v0.md` từ `bang_chi_phi.md`, `pilot_plan.yaml` và `chi_so.md`; đề xuất **Go có điều kiện** với 4 điều kiện, mỗi điều kiện có vai trò và ngày; dựng `group_report.md`.
+
+### Bằng chứng và việc còn chờ
+
+- [Hồ sơ launch v0](report/team/ho_so_launch_v0.md), [báo cáo nhóm](report/team/group_report.md).
+- [Bảng lỗi](report/team/bang_loi.md): 20 nhãn TV4 do agent Claude sinh độc lập với bản nháp TV3 (không phải nhãn người tự gắn, TV4 cần xác nhận); đồng thuận **19/20 = 95%**, ca 13 bất đồng, đã viết quy tắc.
+- **Chưa làm:** phiếu chấm nhóm khác (`phieu_cham.md`) cần hồ sơ của nhóm n + 1; TV4 chưa tự xác nhận nhãn.
